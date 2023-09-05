@@ -1,0 +1,8 @@
+# node_modules folder
+node_modules
+
+# environment variables
+.env
+
+# visual studio code config folder
+.vscode
