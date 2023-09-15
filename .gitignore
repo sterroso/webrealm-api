@@ -8,3 +8,14 @@ node_modules
 
 # visual studio code config folder
 .vscode
+
+# Build directories
+/public
+/out
+/dist
+
+# Lock files
+/**/*.lock
+
+# ESLint configuration
+.eslintrc.json
