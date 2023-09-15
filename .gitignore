@@ -3,6 +3,8 @@ node_modules
 
 # environment variables
 .env
+.env.development
+.env.test
 
 # visual studio code config folder
 .vscode
