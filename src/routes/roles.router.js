@@ -6,14 +6,14 @@ const router = Router();
 
 router.get("/", RoleController.getRoles);
 
-router.get("/{roleId}", RoleController.getRoleById);
+router.get("/:roleId", RoleController.getRoleById);
 
 router.post("/", RoleController.createRole);
 
-router.put("/{roleId}", RoleController.updateRoleById);
+router.put("/:roleId", RoleController.updateRoleById);
 
-router.patch("/{roleId}", RoleController.updateRoleById);
+router.patch("/:roleId", RoleController.updateRoleById);
 
-router.delete("/{roleId}", RoleController.deleteRoleById);
+router.delete("/:roleId", RoleController.deleteRoleById);
 
 export default router;

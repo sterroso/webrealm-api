@@ -36,7 +36,7 @@ export default class BaseRepository {
 
       return results;
     } catch (error) {
-      throw new Error(`Repository getMany Error: ${error.message}`);
+      throw new Error(error.message);
     }
   }
 
@@ -50,21 +50,21 @@ export default class BaseRepository {
 
       return this.dto.getLean(result);
     } catch (error) {
-      throw new Error(`Repository betById Error: ${error.message}`);
+      throw new Error(error.message);
     }
   }
 
   async create(data) {
     try {
-      const newDocument = await this.model.create(RoleDTO.getCreate(data));
+      const newDocument = await this.model.create(this.dto.getCreate(data));
 
       if (!newDocument) {
-        throw new Error("RoleRepository create Error: new Role could not be created.");
+        throw new Error("Repository create Error: new docuiment could not be created.");
       }
 
       return this.dto.getListItem(newDocument);
     } catch (error) {
-      throw new Error(`RoleRepository create Error: ${error.message}`);
+      throw new Error(error.message);
     }
   }
 
@@ -72,17 +72,17 @@ export default class BaseRepository {
     try {
       const result = await this.model.findByIdAndUpdate(
         id, 
-        RoleDTO.getUpdate(data), 
+        this.dto.getUpdate(data), 
         { new: true }
       );
 
       if (!result) {
-        throw new Error("RoleRepository update Error: Role could not be updated.");
+        throw new Error("Repository update Error: document could not be updated.");
       }
 
       return this.dto.getLean(result);
     } catch (error) {
-      throw new Error(`RoleRepository update Error: ${error.message}`);
+      throw new Error(error.message);
     }
  }
 
@@ -91,12 +91,12 @@ export default class BaseRepository {
       const result = this.model.findByIdAndDelete(id);
 
       if (!result) {
-        throw new Error("RoleRepository deleteById Error: Role could not be deleted.");
+        throw new Error("Repository deleteById Error: document could not be deleted.");
       }
 
       return result;
     } catch (error) {
-      throw new Error(`RoleRepository delete Error: ${error.message}`);
+      throw new Error(error.message);
     }
   }
 }
