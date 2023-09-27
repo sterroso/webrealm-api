@@ -11,6 +11,7 @@ export const userSchema = new Schema(
     email: {
       type: String,
       required: true,
+      unique: true,
       minLength: 3
     },
     firstName: {
@@ -43,6 +44,7 @@ export const userSchema = new Schema(
     },
     role: {
       type: Schema.Types.ObjectId,
+      required: true,
       ref: "Role"
     }
   },

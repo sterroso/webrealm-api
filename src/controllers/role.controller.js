@@ -62,7 +62,7 @@ export const updateRoleById = async (req, res) => {
   const { body } = req;
 
   try {
-    resObject.payload = await RoleService.updateById(roleId, body);
+    resObject.payload = await RoleService.updateById(roleId, JSON.parse(body));
   } catch (error) {
     resObject.status = HttpStatus.HTTP_500_INTERNAL_SERVER_ERROR;
     resObject.error = error;

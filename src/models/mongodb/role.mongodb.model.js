@@ -7,6 +7,7 @@ export const roleSchema = new Schema(
     name: {
       type: String,
       required: true,
+      unique: true,
       minLength: 3
     },
     permissions: [{ type: String, minLength: 3 }],

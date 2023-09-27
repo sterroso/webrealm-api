@@ -11,7 +11,7 @@ class ResponseObject {
 
   toJSON() {
     return {
-      status: { ...this.status },
+      status: `${this.status.toString()}`,
       error: this.error ? `${this.error.message}` : undefined,
       payload: { ...this.payload }
     }

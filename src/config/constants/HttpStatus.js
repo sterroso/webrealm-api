@@ -11,7 +11,7 @@ class HttpStatusClass {
   #name;
   description;
   http_ref;
-  
+
   constructor(code, name) {
     this.#code = code;
     this.#name = name;
@@ -27,6 +27,15 @@ class HttpStatusClass {
 
   toString() {
     return `${this.#code} ${this.#name}`
+  }
+
+  toJSON() {
+    return {
+      code: this.code,
+      name: `${this.name}`,
+      description: this?.description || undefined,
+      http_ref: this?.http_ref || undefined,
+    }
   }
 }
 
