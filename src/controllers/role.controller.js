@@ -44,7 +44,7 @@ export const createRole = async (req, res) => {
   const { body } = req;
 
   try {
-    resObject.payload = await RoleService.create(body);
+    resObject.payload = await RoleService.create(JSON.parse(body));
   } catch (error) {
     resObject.status = HttpStatus.HTTP_500_INTERNAL_SERVER_ERROR;
     resObject.error = error;

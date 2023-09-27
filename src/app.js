@@ -10,6 +10,7 @@ const app = e();
 // Application level middlewares
 app.use(e.json());
 app.use(e.urlencoded({ extended: true }));
+app.use(e.text({ limit: "1Mb" }));
 
 // App routing middlewares.
 app.use("/api/roles", RoleRouter);

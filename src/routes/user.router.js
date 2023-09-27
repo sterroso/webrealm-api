@@ -6,14 +6,14 @@ const router = Router();
 
 router.get("/", UserController.getUsers);
 
-router.get("/{userId}", UserController.getUserById);
+router.get("/:userId", UserController.getUserById);
 
 router.post("/", UserController.createUser);
 
-router.put("/{userId}", UserController.updateUserById);
+router.put("/:userId", UserController.updateUserById);
 
-router.patch("/{userId}", UserController.updateUserById);
+router.patch("/:userId", UserController.updateUserById);
 
-router.delete("/{userId}", UserController.deleteUserById);
+router.delete("/:userId", UserController.deleteUserById);
 
 export default router;
